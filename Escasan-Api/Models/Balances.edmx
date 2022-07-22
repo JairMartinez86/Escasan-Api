@@ -5,6 +5,99 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="BalancesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="250" />
+          <Property Name="NoCedula" Type="nvarchar" MaxLength="50" />
+          <Property Name="Correo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Correo2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefono1" Type="nvarchar" MaxLength="30" />
+          <Property Name="Telefono2" Type="nvarchar" MaxLength="20" />
+          <Property Name="Telefono3" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="Celular" Type="nvarchar" MaxLength="20" />
+          <Property Name="Contacto" Type="nvarchar" MaxLength="200" />
+          <Property Name="Contacto2" Type="nvarchar" MaxLength="200" />
+          <Property Name="IdConceptoPrecio" Type="int" Nullable="false" />
+          <Property Name="IdPlazo" Type="int" />
+          <Property Name="Plazo" Type="int" Nullable="false" />
+          <Property Name="DiasG" Type="int" />
+          <Property Name="IdMoneda" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Limite" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IdSector" Type="int" />
+          <Property Name="IdCategoriaCliente" Type="int" />
+          <Property Name="IdBodega" Type="int" />
+          <Property Name="PedirNombre" Type="bit" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FacturarVencido" Type="bit" />
+          <Property Name="IdUsuarioCrea" Type="int" />
+          <Property Name="FechaCreacion" Type="datetime2" Precision="7" />
+          <Property Name="IdUsuarioModifica" Type="int" />
+          <Property Name="FechaModificacion" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Bodegas">
+          <Key>
+            <PropertyRef Name="IdBodega" />
+          </Key>
+          <Property Name="IdBodega" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar" MaxLength="10" />
+          <Property Name="Bodega" Type="nvarchar" MaxLength="50" />
+          <Property Name="ColaImpresion" Type="bit" />
+          <Property Name="FechaFacturacion" Type="date" />
+          <Property Name="FacturarAnterior" Type="bit" />
+          <Property Name="Encabezado_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Encabezado_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Encabezado_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Encabezado_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Encabezado_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Encabezado_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pie_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pie_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pie_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pie_4" Type="nvarchar" MaxLength="100" />
+          <Property Name="Pie_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pie_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="BodegaSuma" Type="int" />
+          <Property Name="BodegaDelivery" Type="bit" />
+          <Property Name="BodegaExportacion" Type="bit" />
+          <Property Name="BodegaContraEntrega" Type="bit" Nullable="false" />
+          <Property Name="PermitirExp" Type="bit" />
+          <Property Name="CodVendedor" Type="nvarchar" MaxLength="5" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar" MaxLength="30" />
+          <Property Name="CodIPSA" Type="nvarchar" MaxLength="50" />
+          <Property Name="Producto" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="IdUnidad" Type="int" />
+          <Property Name="IdGrupo" Type="int" Nullable="false" />
+          <Property Name="IdSubGrupo" Type="int" Nullable="false" />
+          <Property Name="IdGrupoPresupuestario" Type="int" />
+          <Property Name="IdImpuesto" Type="int" />
+          <Property Name="IdProveedor" Type="int" />
+          <Property Name="CostoPromedio" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="Activo" Type="bit" />
+          <Property Name="Estrategico" Type="bit" />
+          <Property Name="CodigoBarra" Type="nvarchar" MaxLength="50" />
+          <Property Name="Clasificacion" Type="nvarchar" MaxLength="2" />
+          <Property Name="Existencia" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ControladoPorLote" Type="bit" />
+          <Property Name="FacturaNegativo" Type="bit" />
+          <Property Name="SAC" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodigoProoveedor" Type="nvarchar" MaxLength="30" />
+          <Property Name="CostoInicial" Type="decimal" Precision="18" Scale="3" Nullable="false" />
+          <Property Name="GRUPO" Type="nvarchar" MaxLength="2" />
+          <Property Name="SUBGRUPO" Type="nvarchar" MaxLength="5" />
+          <Property Name="GrupoPresu" Type="nvarchar" MaxLength="2" />
+          <Property Name="UNIDAD" Type="nvarchar" MaxLength="15" />
+        </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="IdUsuario" />
@@ -20,8 +113,24 @@
           <Property Name="Celular" Type="nvarchar" MaxLength="50" />
           <Property Name="Correo" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="UsuariosBodegas">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="IdBodega" />
+          </Key>
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="IdBodega" Type="int" Nullable="false" />
+          <Property Name="Entrada" Type="bit" />
+          <Property Name="Salida" Type="bit" />
+          <Property Name="Cierre" Type="bit" />
+          <Property Name="Reportes" Type="bit" />
+        </EntityType>
         <EntityContainer Name="BalancesModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="CXC" store:Type="Tables" />
+          <EntitySet Name="Bodegas" EntityType="Self.Bodegas" Schema="INVFAC" store:Type="Tables" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="INVFAC" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="SIS" store:Type="Tables" />
+          <EntitySet Name="UsuariosBodegas" EntityType="Self.UsuariosBodegas" Schema="SIS" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -44,7 +153,116 @@
         </EntityType>
         <EntityContainer Name="BalancesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <EntitySet Name="Bodegas" EntityType="BalancesModel.Bodegas" />
+          <EntitySet Name="Cliente" EntityType="BalancesModel.Cliente" />
+          <EntitySet Name="UsuariosBodegas" EntityType="BalancesModel.UsuariosBodegas" />
+          <EntitySet Name="Productos" EntityType="BalancesModel.Productos" />
         </EntityContainer>
+        <EntityType Name="Bodegas">
+          <Key>
+            <PropertyRef Name="IdBodega" />
+          </Key>
+          <Property Name="IdBodega" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Bodega" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ColaImpresion" Type="Boolean" />
+          <Property Name="FechaFacturacion" Type="DateTime" Precision="0" />
+          <Property Name="FacturarAnterior" Type="Boolean" />
+          <Property Name="Encabezado_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Encabezado_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Encabezado_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Encabezado_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Encabezado_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Encabezado_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pie_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pie_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pie_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pie_4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Pie_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pie_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BodegaSuma" Type="Int32" />
+          <Property Name="BodegaDelivery" Type="Boolean" />
+          <Property Name="BodegaExportacion" Type="Boolean" />
+          <Property Name="BodegaContraEntrega" Type="Boolean" Nullable="false" />
+          <Property Name="PermitirExp" Type="Boolean" />
+          <Property Name="CodVendedor" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="IdCliente" />
+          </Key>
+          <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NoCedula" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Correo2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Contacto" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Contacto2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IdConceptoPrecio" Type="Int32" Nullable="false" />
+          <Property Name="IdPlazo" Type="Int32" />
+          <Property Name="Plazo" Type="Int32" Nullable="false" />
+          <Property Name="DiasG" Type="Int32" />
+          <Property Name="IdMoneda" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="Limite" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="IdSector" Type="Int32" />
+          <Property Name="IdCategoriaCliente" Type="Int32" />
+          <Property Name="IdBodega" Type="Int32" />
+          <Property Name="PedirNombre" Type="Boolean" Nullable="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FacturarVencido" Type="Boolean" />
+          <Property Name="IdUsuarioCrea" Type="Int32" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="7" />
+          <Property Name="IdUsuarioModifica" Type="Int32" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="UsuariosBodegas">
+          <Key>
+            <PropertyRef Name="IdUsuario" />
+            <PropertyRef Name="IdBodega" />
+          </Key>
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IdBodega" Type="Int32" Nullable="false" />
+          <Property Name="Entrada" Type="Boolean" />
+          <Property Name="Salida" Type="Boolean" />
+          <Property Name="Cierre" Type="Boolean" />
+          <Property Name="Reportes" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="IdProducto" />
+          </Key>
+          <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CodIPSA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Producto" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="IdUnidad" Type="Int32" />
+          <Property Name="IdGrupo" Type="Int32" Nullable="false" />
+          <Property Name="IdSubGrupo" Type="Int32" Nullable="false" />
+          <Property Name="IdGrupoPresupuestario" Type="Int32" />
+          <Property Name="IdImpuesto" Type="Int32" />
+          <Property Name="IdProveedor" Type="Int32" />
+          <Property Name="CostoPromedio" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="Activo" Type="Boolean" />
+          <Property Name="Estrategico" Type="Boolean" />
+          <Property Name="CodigoBarra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Clasificacion" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Existencia" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ControladoPorLote" Type="Boolean" />
+          <Property Name="FacturaNegativo" Type="Boolean" />
+          <Property Name="SAC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoProoveedor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CostoInicial" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="GRUPO" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="SUBGRUPO" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="GrupoPresu" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="UNIDAD" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -64,6 +282,114 @@
                 <ScalarProperty Name="IdVendedor" ColumnName="IdVendedor" />
                 <ScalarProperty Name="Celular" ColumnName="Celular" />
                 <ScalarProperty Name="Correo" ColumnName="Correo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bodegas">
+            <EntityTypeMapping TypeName="BalancesModel.Bodegas">
+              <MappingFragment StoreEntitySet="Bodegas">
+                <ScalarProperty Name="CodVendedor" ColumnName="CodVendedor" />
+                <ScalarProperty Name="PermitirExp" ColumnName="PermitirExp" />
+                <ScalarProperty Name="BodegaContraEntrega" ColumnName="BodegaContraEntrega" />
+                <ScalarProperty Name="BodegaExportacion" ColumnName="BodegaExportacion" />
+                <ScalarProperty Name="BodegaDelivery" ColumnName="BodegaDelivery" />
+                <ScalarProperty Name="BodegaSuma" ColumnName="BodegaSuma" />
+                <ScalarProperty Name="Pie_6" ColumnName="Pie_6" />
+                <ScalarProperty Name="Pie_5" ColumnName="Pie_5" />
+                <ScalarProperty Name="Pie_4" ColumnName="Pie_4" />
+                <ScalarProperty Name="Pie_3" ColumnName="Pie_3" />
+                <ScalarProperty Name="Pie_2" ColumnName="Pie_2" />
+                <ScalarProperty Name="Pie_1" ColumnName="Pie_1" />
+                <ScalarProperty Name="Encabezado_6" ColumnName="Encabezado_6" />
+                <ScalarProperty Name="Encabezado_5" ColumnName="Encabezado_5" />
+                <ScalarProperty Name="Encabezado_4" ColumnName="Encabezado_4" />
+                <ScalarProperty Name="Encabezado_3" ColumnName="Encabezado_3" />
+                <ScalarProperty Name="Encabezado_2" ColumnName="Encabezado_2" />
+                <ScalarProperty Name="Encabezado_1" ColumnName="Encabezado_1" />
+                <ScalarProperty Name="FacturarAnterior" ColumnName="FacturarAnterior" />
+                <ScalarProperty Name="FechaFacturacion" ColumnName="FechaFacturacion" />
+                <ScalarProperty Name="ColaImpresion" ColumnName="ColaImpresion" />
+                <ScalarProperty Name="Bodega" ColumnName="Bodega" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="BalancesModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="IdUsuarioModifica" ColumnName="IdUsuarioModifica" />
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IdUsuarioCrea" ColumnName="IdUsuarioCrea" />
+                <ScalarProperty Name="FacturarVencido" ColumnName="FacturarVencido" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="PedirNombre" ColumnName="PedirNombre" />
+                <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+                <ScalarProperty Name="IdCategoriaCliente" ColumnName="IdCategoriaCliente" />
+                <ScalarProperty Name="IdSector" ColumnName="IdSector" />
+                <ScalarProperty Name="Limite" ColumnName="Limite" />
+                <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+                <ScalarProperty Name="DiasG" ColumnName="DiasG" />
+                <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+                <ScalarProperty Name="IdPlazo" ColumnName="IdPlazo" />
+                <ScalarProperty Name="IdConceptoPrecio" ColumnName="IdConceptoPrecio" />
+                <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+                <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono3" ColumnName="Telefono3" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Correo2" ColumnName="Correo2" />
+                <ScalarProperty Name="Correo" ColumnName="Correo" />
+                <ScalarProperty Name="NoCedula" ColumnName="NoCedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsuariosBodegas">
+            <EntityTypeMapping TypeName="BalancesModel.UsuariosBodegas">
+              <MappingFragment StoreEntitySet="UsuariosBodegas">
+                <ScalarProperty Name="Reportes" ColumnName="Reportes" />
+                <ScalarProperty Name="Cierre" ColumnName="Cierre" />
+                <ScalarProperty Name="Salida" ColumnName="Salida" />
+                <ScalarProperty Name="Entrada" ColumnName="Entrada" />
+                <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productos">
+            <EntityTypeMapping TypeName="BalancesModel.Productos">
+              <MappingFragment StoreEntitySet="Productos">
+                <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+                <ScalarProperty Name="GrupoPresu" ColumnName="GrupoPresu" />
+                <ScalarProperty Name="SUBGRUPO" ColumnName="SUBGRUPO" />
+                <ScalarProperty Name="GRUPO" ColumnName="GRUPO" />
+                <ScalarProperty Name="CostoInicial" ColumnName="CostoInicial" />
+                <ScalarProperty Name="CodigoProoveedor" ColumnName="CodigoProoveedor" />
+                <ScalarProperty Name="SAC" ColumnName="SAC" />
+                <ScalarProperty Name="FacturaNegativo" ColumnName="FacturaNegativo" />
+                <ScalarProperty Name="ControladoPorLote" ColumnName="ControladoPorLote" />
+                <ScalarProperty Name="Existencia" ColumnName="Existencia" />
+                <ScalarProperty Name="Clasificacion" ColumnName="Clasificacion" />
+                <ScalarProperty Name="CodigoBarra" ColumnName="CodigoBarra" />
+                <ScalarProperty Name="Estrategico" ColumnName="Estrategico" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="CostoPromedio" ColumnName="CostoPromedio" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+                <ScalarProperty Name="IdImpuesto" ColumnName="IdImpuesto" />
+                <ScalarProperty Name="IdGrupoPresupuestario" ColumnName="IdGrupoPresupuestario" />
+                <ScalarProperty Name="IdSubGrupo" ColumnName="IdSubGrupo" />
+                <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+                <ScalarProperty Name="IdUnidad" ColumnName="IdUnidad" />
+                <ScalarProperty Name="Producto" ColumnName="Producto" />
+                <ScalarProperty Name="CodIPSA" ColumnName="CodIPSA" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

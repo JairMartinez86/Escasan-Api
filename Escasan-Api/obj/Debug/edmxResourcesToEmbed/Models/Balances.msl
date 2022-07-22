@@ -17,5 +17,113 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Bodegas">
+      <EntityTypeMapping TypeName="BalancesModel.Bodegas">
+        <MappingFragment StoreEntitySet="Bodegas">
+          <ScalarProperty Name="CodVendedor" ColumnName="CodVendedor" />
+          <ScalarProperty Name="PermitirExp" ColumnName="PermitirExp" />
+          <ScalarProperty Name="BodegaContraEntrega" ColumnName="BodegaContraEntrega" />
+          <ScalarProperty Name="BodegaExportacion" ColumnName="BodegaExportacion" />
+          <ScalarProperty Name="BodegaDelivery" ColumnName="BodegaDelivery" />
+          <ScalarProperty Name="BodegaSuma" ColumnName="BodegaSuma" />
+          <ScalarProperty Name="Pie_6" ColumnName="Pie_6" />
+          <ScalarProperty Name="Pie_5" ColumnName="Pie_5" />
+          <ScalarProperty Name="Pie_4" ColumnName="Pie_4" />
+          <ScalarProperty Name="Pie_3" ColumnName="Pie_3" />
+          <ScalarProperty Name="Pie_2" ColumnName="Pie_2" />
+          <ScalarProperty Name="Pie_1" ColumnName="Pie_1" />
+          <ScalarProperty Name="Encabezado_6" ColumnName="Encabezado_6" />
+          <ScalarProperty Name="Encabezado_5" ColumnName="Encabezado_5" />
+          <ScalarProperty Name="Encabezado_4" ColumnName="Encabezado_4" />
+          <ScalarProperty Name="Encabezado_3" ColumnName="Encabezado_3" />
+          <ScalarProperty Name="Encabezado_2" ColumnName="Encabezado_2" />
+          <ScalarProperty Name="Encabezado_1" ColumnName="Encabezado_1" />
+          <ScalarProperty Name="FacturarAnterior" ColumnName="FacturarAnterior" />
+          <ScalarProperty Name="FechaFacturacion" ColumnName="FechaFacturacion" />
+          <ScalarProperty Name="ColaImpresion" ColumnName="ColaImpresion" />
+          <ScalarProperty Name="Bodega" ColumnName="Bodega" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="BalancesModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="IdUsuarioModifica" ColumnName="IdUsuarioModifica" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="IdUsuarioCrea" ColumnName="IdUsuarioCrea" />
+          <ScalarProperty Name="FacturarVencido" ColumnName="FacturarVencido" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="PedirNombre" ColumnName="PedirNombre" />
+          <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+          <ScalarProperty Name="IdCategoriaCliente" ColumnName="IdCategoriaCliente" />
+          <ScalarProperty Name="IdSector" ColumnName="IdSector" />
+          <ScalarProperty Name="Limite" ColumnName="Limite" />
+          <ScalarProperty Name="IdMoneda" ColumnName="IdMoneda" />
+          <ScalarProperty Name="DiasG" ColumnName="DiasG" />
+          <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+          <ScalarProperty Name="IdPlazo" ColumnName="IdPlazo" />
+          <ScalarProperty Name="IdConceptoPrecio" ColumnName="IdConceptoPrecio" />
+          <ScalarProperty Name="Contacto2" ColumnName="Contacto2" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Telefono3" ColumnName="Telefono3" />
+          <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+          <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+          <ScalarProperty Name="Correo2" ColumnName="Correo2" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="NoCedula" ColumnName="NoCedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuariosBodegas">
+      <EntityTypeMapping TypeName="BalancesModel.UsuariosBodegas">
+        <MappingFragment StoreEntitySet="UsuariosBodegas">
+          <ScalarProperty Name="Reportes" ColumnName="Reportes" />
+          <ScalarProperty Name="Cierre" ColumnName="Cierre" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
+          <ScalarProperty Name="Entrada" ColumnName="Entrada" />
+          <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="BalancesModel.Productos">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="UNIDAD" ColumnName="UNIDAD" />
+          <ScalarProperty Name="GrupoPresu" ColumnName="GrupoPresu" />
+          <ScalarProperty Name="SUBGRUPO" ColumnName="SUBGRUPO" />
+          <ScalarProperty Name="GRUPO" ColumnName="GRUPO" />
+          <ScalarProperty Name="CostoInicial" ColumnName="CostoInicial" />
+          <ScalarProperty Name="CodigoProoveedor" ColumnName="CodigoProoveedor" />
+          <ScalarProperty Name="SAC" ColumnName="SAC" />
+          <ScalarProperty Name="FacturaNegativo" ColumnName="FacturaNegativo" />
+          <ScalarProperty Name="ControladoPorLote" ColumnName="ControladoPorLote" />
+          <ScalarProperty Name="Existencia" ColumnName="Existencia" />
+          <ScalarProperty Name="Clasificacion" ColumnName="Clasificacion" />
+          <ScalarProperty Name="CodigoBarra" ColumnName="CodigoBarra" />
+          <ScalarProperty Name="Estrategico" ColumnName="Estrategico" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="CostoPromedio" ColumnName="CostoPromedio" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="IdImpuesto" ColumnName="IdImpuesto" />
+          <ScalarProperty Name="IdGrupoPresupuestario" ColumnName="IdGrupoPresupuestario" />
+          <ScalarProperty Name="IdSubGrupo" ColumnName="IdSubGrupo" />
+          <ScalarProperty Name="IdGrupo" ColumnName="IdGrupo" />
+          <ScalarProperty Name="IdUnidad" ColumnName="IdUnidad" />
+          <ScalarProperty Name="Producto" ColumnName="Producto" />
+          <ScalarProperty Name="CodIPSA" ColumnName="CodIPSA" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

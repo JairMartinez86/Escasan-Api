@@ -42,7 +42,8 @@ namespace Escasan_Api.Controllers
                                  select new
                                  {
                                      Nombre = string.Concat(_q.Nombres, " ", _q.Apellidos),
-                                     Fecha = DateTime.Now
+                                     Fecha = DateTime.Now,
+                                     IdVendedor = _q.IdVendedor
                                  }).ToList();
 
            

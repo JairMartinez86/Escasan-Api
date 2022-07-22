@@ -26,5 +26,9 @@ namespace Escasan_Api.Models
         }
     
         public virtual DbSet<Usuarios> Usuarios { get; set; }
+        public virtual DbSet<Bodegas> Bodegas { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<UsuariosBodegas> UsuariosBodegas { get; set; }
+        public virtual DbSet<Productos> Productos { get; set; }
     }
 }

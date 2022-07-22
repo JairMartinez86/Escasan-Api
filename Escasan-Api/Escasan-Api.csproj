@@ -218,6 +218,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Class\Cls_Mensaje.cs" />
+    <Compile Include="Controllers\FACT\FacturaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SIS\UsuarioController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -239,7 +240,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Balances.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Bodegas.cs">
+      <DependentUpon>Balances.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cliente.cs">
+      <DependentUpon>Balances.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Productos.cs">
+      <DependentUpon>Balances.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Usuarios.cs">
+      <DependentUpon>Balances.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuariosBodegas.cs">
       <DependentUpon>Balances.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -314,6 +327,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Factura\" />
     <Folder Include="Views\Usuario\" />
   </ItemGroup>
   <ItemGroup>
